@@ -3,6 +3,8 @@ require "./zap/*"
 module Zap
   extend self
 
+  # Array
+
   def chunk(array, size)
     result = [] of typeof(array)
 
@@ -35,4 +37,22 @@ module Zap
 
     array + values_array
   end
+
+  def difference(array, values)
+    array - values
+  end
+
+  def difference_by
+  end
+
+  def difference_with
+  end
+
+  def drop(array, number = 1)
+    start = number > array.size ? array.size : number
+    array[start..array.size]
+  end
+
+  # Array
+
 end

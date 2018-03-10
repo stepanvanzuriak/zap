@@ -16,4 +16,15 @@ describe Zap do
     Zap.concat([1, 2], 2, [3], [[4]], [[[4]]]).should eq([1, 2, 2, 3, [4], [[4]]])
     Zap.concat([1, 2], 2, [3, 10], [[4]], [[[4]]]).should eq([1, 2, 2, 3, 10, [4], [[4]]])
   end
+
+  it "@difference Creates an array of array values not included in the other" do
+    Zap.difference([2, 1, 5, 10], [2]).should eq([1, 5, 10])
+  end
+
+  it "@drop Creates a slice of array with n elements dropped from the beginning" do
+    Zap.drop([1, 2, 3]).should eq([2, 3])
+    Zap.drop([1, 2, 3], 2).should eq([3])
+    Zap.drop([1, 2, 3], 5).should eq([] of Int32)
+    Zap.drop([1, 2, 3], 0).should eq([1, 2, 3])
+  end
 end
