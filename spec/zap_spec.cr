@@ -34,4 +34,9 @@ describe Zap do
     Zap.drop_right([1, 2, 3], 5).should eq([] of Int32)
     Zap.drop_right([1, 2, 3], 0).should eq([1, 2, 3])
   end
+
+  it "@fill Fills elements of array with value from start up to, but not including, end" do
+    Zap.fill([1, 2, 3], 'a').should eq(['a', 'a', 'a'])
+    Zap.fill([4, 6, 8, 10], '*', 1, 3).should eq([4, '*', '*', 10])
+  end
 end

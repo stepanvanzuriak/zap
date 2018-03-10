@@ -58,6 +58,19 @@ module Zap
     array[0, end_index]
   end
 
+  def drop_right_while
+  end
+
+  def drop_while
+  end
+
+  def fill(array, value, start_index = 0, end_index = array.size + 1)
+    result = [] of typeof(value) + array
+    end_index = end_index - 1 < 0 ? 0 : end_index - 1
+
+    result.fill(start_index, end_index) { |element| value }
+  end
+
   # Array
 
 end
