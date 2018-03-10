@@ -49,8 +49,13 @@ module Zap
   end
 
   def drop(array, number = 1)
-    start = number > array.size ? array.size : number
-    array[start..array.size]
+    start_index = number > array.size ? array.size : number
+    array[start_index, array.size]
+  end
+
+  def drop_right(array, number = 1)
+    end_index = array.size - number < 0 ? 0 : array.size - number
+    array[0, end_index]
   end
 
   # Array

@@ -27,4 +27,11 @@ describe Zap do
     Zap.drop([1, 2, 3], 5).should eq([] of Int32)
     Zap.drop([1, 2, 3], 0).should eq([1, 2, 3])
   end
+
+  it "@drop_right Creates a slice of array with n elements dropped from the end" do
+    Zap.drop_right([1, 2, 3]).should eq([1, 2])
+    Zap.drop_right([1, 2, 3], 2).should eq([1])
+    Zap.drop_right([1, 2, 3], 5).should eq([] of Int32)
+    Zap.drop_right([1, 2, 3], 0).should eq([1, 2, 3])
+  end
 end
