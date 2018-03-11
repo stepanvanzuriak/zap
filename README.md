@@ -34,6 +34,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   ```
 
+  __⚠️ Broken__
 * `compact(array)` - Creates an array with all falsey values removed
   
   ```crystal
@@ -72,11 +73,20 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.fill([1, 2, 3], 'a')           # ['a', 'a', 'a']
   Zap.fill([4, 6, 8, 10], '*', 1, 3) # [4, '*', '*', 10]
   ```
+
+  __⚠️ Broken__
 * `flatten(array)` -  Flattens array a single level deep
+  
   ```crystal
   Zap.flatten([1, [2]])      # [1, 2]
   Zap.flatten([1, [2, 3]])   # [1, 2, 3])
   Zap.flatten([1, [[2, 3]]]) # [1, [2, 3]])
+  ```
+
+* `flattenDeep(array)` - Recursively flattens array
+
+  ```crystal
+  Zap.flattenDeep([1, [2, [3, [4]], 5]]) # [1, 2, 3, 4, 5]
   ```
 
 
