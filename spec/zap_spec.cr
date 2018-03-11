@@ -13,6 +13,7 @@ describe Zap do
 
   it "@concat Creates a new array concatenating array with any additional arrays and/or values" do
     Zap.concat([1], 2, [3], [[4]]).should eq([1, 2, 3, [4]])
+    Zap.concat([1], [1, [[2, 3]]]).should eq([1, 1, [[2, 3]]])
     Zap.concat([1, 2], 2, [3], [[4]], [[[4]]]).should eq([1, 2, 2, 3, [4], [[4]]])
     Zap.concat([1, 2], 2, [3, 10], [[4]], [[[4]]]).should eq([1, 2, 2, 3, 10, [4], [[4]]])
   end
@@ -38,5 +39,11 @@ describe Zap do
   it "@fill Fills elements of array with value from start up to, but not including, end" do
     Zap.fill([1, 2, 3], 'a').should eq(['a', 'a', 'a'])
     Zap.fill([4, 6, 8, 10], '*', 1, 3).should eq([4, '*', '*', 10])
+  end
+
+  it "@flatten Flattens array a single level deep" do
+    Zap.flatten([1, [2]]).should eq([1, 2])
+    Zap.flatten([1, [2, 3]]).should eq([1, 2, 3])
+    Zap.flatten([1, [[2, 3]]]).should eq([1, [2, 3]])
   end
 end

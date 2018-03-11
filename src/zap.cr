@@ -23,19 +23,8 @@ module Zap
   end
 
   def concat(array, *values)
-    values_array = values.to_a
-
-    values_array.each_with_index do |value, index|
-      if value.is_a?(Array)
-        values_array.delete_at(index)
-
-        value.reverse.each do |element|
-          values_array.insert(index, element)
-        end
-      end
-    end
-
-    array + values_array
+    array_values = values.to_a
+    array + Zap.flatten(array_values)
   end
 
   def difference(array, values)
@@ -69,6 +58,26 @@ module Zap
     end_index = end_index - 1 < 0 ? 0 : end_index - 1
 
     result.fill(start_index, end_index) { |element| value }
+  end
+
+  def findIndex
+  end
+
+  def findLastIndex
+  end
+
+  def flatten(array)
+    result = [] of typeof(array) | typeof(array.first)
+
+    array.each do |item|
+      if item.is_a?(Array)
+        result = ([] of typeof(item) | typeof(item.first)) + result
+        result.concat(item)
+      else
+        result << item
+      end
+    end
+    result
   end
 
   # Array

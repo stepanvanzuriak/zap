@@ -70,6 +70,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.fill([1, 2, 3], 'a')           # ['a', 'a', 'a']
   Zap.fill([4, 6, 8, 10], '*', 1, 3) # [4, '*', '*', 10]
   ```
+* `flatten(array)` -  Flattens array a single level deep
+  ```crystal
+  Zap.flatten([1, [2]])      # [1, 2]
+  Zap.flatten([1, [2, 3]])   # [1, 2, 3])
+  Zap.flatten([1, [[2, 3]]]) # [1, [2, 3]])
+  ```
 
 
 ## Contributing
