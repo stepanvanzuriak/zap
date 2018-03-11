@@ -216,6 +216,16 @@ module Zap
     result
   end
 
+  def union_by
+  end
+
+  def union_with
+  end
+
+  def uniq(array)
+    array.uniq
+  end
+
   # Array
 
 end
