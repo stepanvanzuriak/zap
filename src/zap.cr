@@ -226,6 +226,24 @@ module Zap
     array.uniq
   end
 
+  def uniq_by
+  end
+
+  def uniq_with
+  end
+
+  def unzip
+  end
+
+  def unzip_with
+  end
+
+  def without(array, *value)
+    array_values = value.to_a
+
+    array - array_values
+  end
+
   # Array
 
 end

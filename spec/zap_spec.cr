@@ -128,4 +128,8 @@ describe Zap do
       [1, 2]
     )
   end
+
+  it "@without Creates an array excluding all given values" do
+    Zap.without([2, 1, 2, 3], 1, 2).should eq([3])
+  end
 end

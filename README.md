@@ -160,6 +160,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.uniq([1, 2, 2]) # [1, 2]
   ```
 
+* `without(array, *values)` - Creates an array excluding all given values
+
+  ```
+  Zap.without([1, 2, 3], 1, 2) # [3]
+  ```
+
 ## Contributing
 
 1. Fork it ( https://github.com/stepanvanzuriak/zap/fork )
