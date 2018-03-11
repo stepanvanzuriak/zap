@@ -70,4 +70,9 @@ describe Zap do
     Zap.initial([1, 2, 3]).should eq([1, 2])
     Zap.initial([] of Int32).should eq([] of Int32)
   end
+
+  it "@join Converts all elements in array into a string separated by separator" do
+    Zap.join(['a', 'b', 'c'], '~').should eq("a~b~c")
+    Zap.join(['a', 'b', 'c'], "ab").should eq("aabbabc")
+  end
 end

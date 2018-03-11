@@ -108,6 +108,25 @@ module Zap
     end_index = array.size - 1 > 0 ? array.size - 1 : 0
     array[0, end_index]
   end
+
+  def intersection
+  end
+
+  def intersection_by
+  end
+
+  def intersection_with
+  end
+
+  def join(array, separator = ',')
+    result = ""
+
+    array.each do |item|
+      result = result.size > 0 ? result + separator + item : result + item
+    end
+
+    result
+  end
   # Array
 
 end

@@ -103,6 +103,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.initial([] of Int32) # [] of Int32
   ```
 
+* `join(array, separator = ',')` - Converts all elements in array into a string separated by separator
+
+  ```crystal
+  Zap.join(['a', 'b', 'c'], '~')    # "a~b~c"
+  Zap.join(['a', 'b', 'c'], "ab") # "aabbabc"
+  ```
+
 ## Contributing
 
 1. Fork it ( https://github.com/stepanvanzuriak/zap/fork )
