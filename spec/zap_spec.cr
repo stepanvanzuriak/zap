@@ -75,4 +75,9 @@ describe Zap do
     Zap.join(['a', 'b', 'c'], '~').should eq("a~b~c")
     Zap.join(['a', 'b', 'c'], "ab").should eq("aabbabc")
   end
+
+  it "@last Gets the last element of array" do
+    Zap.last([1, 2, 3]).should eq(3)
+    Zap.last([] of Int32).should eq(Nil)
+  end
 end

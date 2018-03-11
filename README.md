@@ -106,8 +106,15 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 * `join(array, separator = ',')` - Converts all elements in array into a string separated by separator
 
   ```crystal
-  Zap.join(['a', 'b', 'c'], '~')    # "a~b~c"
+  Zap.join(['a', 'b', 'c'], '~')  # "a~b~c"
   Zap.join(['a', 'b', 'c'], "ab") # "aabbabc"
+  ```
+
+* `last(array)` - Gets the last element of array
+
+  ```crystal
+  Zap.last([1, 2, 3])   # 3
+  Zap.last([] of Int32) # Nil
   ```
 
 ## Contributing

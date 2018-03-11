@@ -127,6 +127,10 @@ module Zap
 
     result
   end
+
+  def last(array)
+    array.size - 1 > 0 ? array[array.size - 1] : Nil
+  end
   # Array
 
 end
