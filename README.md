@@ -89,6 +89,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.flattenDeep([1, [2, [3, [4]], 5]]) # [1, 2, 3, 4, 5]
   ```
 
+* `head(array)` - Gets the first element of array
+
+  ```crystal
+  Zap.head([1, 2, 3]) # 1
+  Zap.head([] of Int32) # Nil
+  ```
 
 ## Contributing
 

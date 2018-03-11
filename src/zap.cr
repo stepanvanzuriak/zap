@@ -93,6 +93,10 @@ module Zap
 
     array
   end
+
+  def head(array)
+    array.size > 0 ? array[0] : Nil
+  end
   # Array
 
 end

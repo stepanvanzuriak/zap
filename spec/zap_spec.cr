@@ -60,4 +60,9 @@ describe Zap do
     # Zap.flattenDepth([1, [2, [3, [4]], 5]], 1).should eq([1, 2, [3, [4]], 5])
     # Zap.flattenDepth([1, [2, [3, [4]], 5]], 2).should eq([1, 2, 3, [4], 5])
   end
+
+  it "@head Gets the first element of array" do
+    Zap.head([1, 2, 3]).should eq(1)
+    Zap.head([] of Int32).should eq(Nil)
+  end
 end
