@@ -1,6 +1,8 @@
 require "./spec_helper"
 
 describe Zap do
+  # Array
+
   it "@chunk Creates an array of elements split into groups the length of size" do
     Zap.chunk(['a', 'b', 'c', 4], 2).should eq([['a', 'b'], ['c', 4]])
     Zap.chunk(['a', 'b', 'c', 'd'], 3).should eq([['a', 'b', 'c'], ['d']])
@@ -132,4 +134,14 @@ describe Zap do
   it "@without Creates an array excluding all given values" do
     Zap.without([2, 1, 2, 3], 1, 2).should eq([3])
   end
+
+  it "@sample Gets a random element from array" do
+    Zap.sample([2]).should eq(2)
+  end
+
+  # Array
+
+  # Enumerable
+  # Enumerable
+
 end

@@ -147,6 +147,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.tail([] of Int32) # Nil 
   ```
 
+* `sample(array)` - Gets a random element from array
+  
+  ```crystal
+  Zap.sample([1, 2]) # 1 or 2
+  Zap.sample([1])    # 1
+  ```
+
   __⚠️ Broken__
 * `union(*values)` - Creates an array of unique values
 

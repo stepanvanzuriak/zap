@@ -161,6 +161,10 @@ module Zap
     array.reverse!
   end
 
+  def sample(array)
+    array.sample
+  end
+
   def slice
   end
 
@@ -244,6 +248,85 @@ module Zap
     array - array_values
   end
 
+  def xor
+  end
+
+  def xor_by
+  end
+
+  def xor_with
+  end
+
+  def zip
+  end
+
+  def zip_with
+  end
+
   # Array
+
+  # Enumerable
+
+  def count_by
+  end
+
+  def every
+  end
+
+  def filter
+  end
+
+  def find
+  end
+
+  def find_last
+  end
+
+  def flat_map
+  end
+
+  def flat_map_deep
+  end
+
+  def flat_map_depth
+  end
+
+  def for_each
+  end
+
+  def for_each_right
+  end
+
+  def group_by
+  end
+
+  def includes
+  end
+
+  def invoke_map
+  end
+
+  def key_by
+  end
+
+  def map
+  end
+
+  def order_by
+  end
+
+  def partition
+  end
+
+  def reduce
+  end
+
+  def reduce_right
+  end
+
+  def reject
+  end
+
+  # Enumerable
 
 end
