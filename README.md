@@ -117,6 +117,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.last([] of Int32) # Nil
   ```
 
+* `nth(array, index = 0)` - Gets the element at index n of array. If n is negative, the nth element from the end is returned
+
+  ```crystal
+    Zap.nth(['a', 'b', 'c', 'd'], 1)  # 'b'
+    Zap.nth(['a', 'b', 'c', 'd'], -2) # 'c'
+  ```
 ## Contributing
 
 1. Fork it ( https://github.com/stepanvanzuriak/zap/fork )

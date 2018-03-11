@@ -80,4 +80,14 @@ describe Zap do
     Zap.last([1, 2, 3]).should eq(3)
     Zap.last([] of Int32).should eq(Nil)
   end
+
+  it "@nth Gets the element at index n of array. If n is negative, the nth element from the end is returned" do
+    Zap.nth(['a', 'b', 'c', 'd'], 1).should eq(
+      'b'
+    )
+
+    Zap.nth(['a', 'b', 'c', 'd'], -2).should eq(
+      'c'
+    )
+  end
 end
