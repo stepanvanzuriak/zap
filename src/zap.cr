@@ -24,7 +24,10 @@ module Zap
 
   def concat(array, *values)
     array_values = values.to_a
-    array + Zap.flatten(array_values)
+
+    # array + Zap.flatten(array_values)
+
+    Zap.flatten(array_values)
   end
 
   def difference(array, values)
@@ -77,9 +80,19 @@ module Zap
         result << item
       end
     end
+
     result
   end
 
+  def flattenDeep(array)
+    array.flatten
+  end
+
+  def flattenDepth(array, depth = 1)
+    0.upto(depth) { |i| array = Zap.flatten(array) }
+
+    array
+  end
   # Array
 
 end
