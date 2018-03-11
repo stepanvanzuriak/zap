@@ -115,4 +115,10 @@ describe Zap do
       Nil
     )
   end
+
+  it "@union Creates an array of unique values" do
+    Zap.union([2], [1, 2]).should eq(
+      [2, 1]
+    )
+  end
 end

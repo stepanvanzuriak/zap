@@ -146,6 +146,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.tail([1, 2, 3])   # [2, 3]
   Zap.tail([] of Int32) # Nil 
   ```
+  
+  __⚠️ Broken__
+* `union(*values)` - Creates an array of unique values
+
+  ```crystal
+  Zap.union([2], [1, 2]) # [2, 1]
+  ```
 
 ## Contributing
 

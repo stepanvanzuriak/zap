@@ -193,6 +193,29 @@ module Zap
     array.size > 0 ? array[1, array.size - 1] : Nil
   end
 
+  def take
+  end
+
+  def take_right
+  end
+
+  def take_right_while
+  end
+
+  def take_while
+  end
+
+  def union(*value)
+    array_values = value.to_a
+    result = [] of typeof(array_values.first) | typeof(array_values)
+
+    array_values.each do |item|
+      result = result | item
+    end
+
+    result
+  end
+
   # Array
 
 end
