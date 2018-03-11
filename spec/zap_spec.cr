@@ -65,4 +65,9 @@ describe Zap do
     Zap.head([1, 2, 3]).should eq(1)
     Zap.head([] of Int32).should eq(Nil)
   end
+
+  it "@initial Gets all but the last element of array" do
+    Zap.initial([1, 2, 3]).should eq([1, 2])
+    Zap.initial([] of Int32).should eq([] of Int32)
+  end
 end

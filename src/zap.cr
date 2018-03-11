@@ -94,8 +94,19 @@ module Zap
     array
   end
 
+  def fromPairs
+  end
+
   def head(array)
     array.size > 0 ? array[0] : Nil
+  end
+
+  def index_of
+  end
+
+  def initial(array)
+    end_index = array.size - 1 > 0 ? array.size - 1 : 0
+    array[0, end_index]
   end
   # Array
 

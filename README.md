@@ -92,8 +92,15 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 * `head(array)` - Gets the first element of array
 
   ```crystal
-  Zap.head([1, 2, 3]) # 1
+  Zap.head([1, 2, 3])   # 1
   Zap.head([] of Int32) # Nil
+  ```
+
+* `initial(array)` - Gets all but the last element of array
+
+  ```crystal
+  Zap.initial([1, 2, 3])   # [1, 2]
+  Zap.initial([] of Int32) # [] of Int32
   ```
 
 ## Contributing
