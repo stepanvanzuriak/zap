@@ -2,6 +2,8 @@
 
 A crystal utility library delivering modularity, performance, & extras.
 
+Inspired by [lodash](https://lodash.com/).
+
 __⚠️ Under development - APIs will change.__
 
 ## Installation
