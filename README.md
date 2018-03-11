@@ -1,6 +1,6 @@
 # zap ⚡
 
-Lodash in crystal
+A crystal utility library delivering modularity, performance, & extras.
 
 __⚠️ Under development - APIs will change.__
 
