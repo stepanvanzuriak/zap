@@ -132,11 +132,33 @@ module Zap
     array.size - 1 > 0 ? array[array.size - 1] : Nil
   end
 
-  def lastIndexOf
+  def last_index_of
   end
 
   def nth(array, index = 0)
     array[index]
+  end
+
+  def pull
+  end
+
+  def pull_all
+  end
+
+  def pull_all_by
+  end
+
+  def pull_all_with
+  end
+
+  def pull_at
+  end
+
+  def remove
+  end
+
+  def reverse(array)
+    array.reverse!
   end
   # Array
 

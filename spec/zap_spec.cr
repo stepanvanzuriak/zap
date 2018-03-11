@@ -90,4 +90,13 @@ describe Zap do
       'c'
     )
   end
+
+  it "@reverse Reverses array so that the first element becomes the last, the second element becomes the second to last, and so on" do
+    array = [1, 2, 3]
+
+    Zap.reverse(array).should eq(
+      [3, 2, 1]
+    )
+    array.should eq([3, 2, 1])
+  end
 end

@@ -120,8 +120,18 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 * `nth(array, index = 0)` - Gets the element at index n of array. If n is negative, the nth element from the end is returned
 
   ```crystal
-    Zap.nth(['a', 'b', 'c', 'd'], 1)  # 'b'
-    Zap.nth(['a', 'b', 'c', 'd'], -2) # 'c'
+  Zap.nth(['a', 'b', 'c', 'd'], 1)  # 'b'
+  Zap.nth(['a', 'b', 'c', 'd'], -2) # 'c'
+  ```
+
+* `reverse(array)` - Reverses array so that the first element becomes the last, the second element becomes the second to last, and so on
+
+  ```crystal
+  array = [1, 2, 3]
+
+  Zap.reverse(array) # [3, 2, 1]
+
+  array # [3, 2, 1]
   ```
 ## Contributing
 
