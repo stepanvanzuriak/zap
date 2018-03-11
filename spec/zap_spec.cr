@@ -99,4 +99,10 @@ describe Zap do
     )
     array.should eq([3, 2, 1])
   end
+
+  it "@sorted_uniq Sort array and returns a new Array by removing duplicate values in self" do
+    Zap.sorted_uniq([2, 1, 2]).should eq(
+      [1, 2]
+    )
+  end
 end

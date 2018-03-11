@@ -160,6 +160,32 @@ module Zap
   def reverse(array)
     array.reverse!
   end
+
+  def slice
+  end
+
+  def sorted_index
+  end
+
+  def sorted_index_by
+  end
+
+  def sorted_index_of
+  end
+
+  def sorted_last_index
+  end
+
+  def sorted_last_index_by
+  end
+
+  def sorted_last_index_of
+  end
+
+  def sorted_uniq(array)
+    array.sort.uniq
+  end
+
   # Array
 
 end

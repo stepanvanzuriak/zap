@@ -133,6 +133,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 
   array # [3, 2, 1]
   ```
+
+* `sorted_uniq(array)` - Sort array and returns a new array by removing duplicate values in self
+  
+  ```crystal
+  Zap.sorted_uniq([2, 1, 2]) # [1, 2]
+  ```
+
 ## Contributing
 
 1. Fork it ( https://github.com/stepanvanzuriak/zap/fork )
