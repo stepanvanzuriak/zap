@@ -156,13 +156,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 
 * `uniq(array)` - Returns a new array by removing duplicate values in self
 
-  ```
+  ```crystal
   Zap.uniq([1, 2, 2]) # [1, 2]
   ```
 
 * `without(array, *values)` - Creates an array excluding all given values
 
-  ```
+  ```crystal
   Zap.without([1, 2, 3], 1, 2) # [3]
   ```
 
