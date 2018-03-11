@@ -140,6 +140,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.sorted_uniq([2, 1, 2]) # [1, 2]
   ```
 
+* `tail(array)` - Gets all but the first element of array
+
+  ```crystal
+  Zap.tail([1, 2, 3])   # [2, 3]
+  Zap.tail([] of Int32) # Nil 
+  ```
+
 ## Contributing
 
 1. Fork it ( https://github.com/stepanvanzuriak/zap/fork )

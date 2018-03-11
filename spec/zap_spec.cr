@@ -105,4 +105,14 @@ describe Zap do
       [1, 2]
     )
   end
+
+  it "@tail Gets all but the first element of array" do
+    Zap.tail([1, 2, 3]).should eq(
+      [2, 3]
+    )
+
+    Zap.tail([] of Int32).should eq(
+      Nil
+    )
+  end
 end

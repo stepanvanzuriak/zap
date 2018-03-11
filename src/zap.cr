@@ -186,6 +186,13 @@ module Zap
     array.sort.uniq
   end
 
+  def sorted_uniq_by
+  end
+
+  def tail(array)
+    array.size > 0 ? array[1, array.size - 1] : Nil
+  end
+
   # Array
 
 end
