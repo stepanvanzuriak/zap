@@ -74,6 +74,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.fill([4, 6, 8, 10], '*', 1, 3) # [4, '*', '*', 10]
   ```
 
+* `filter(array, func)` - The filter method creates a new array with all elements that pass the test implemented by the provided function
+
+  ```crystal
+  Zap.filter([1, 2, 3], ->(element : Int32, index : Int32) { element > 2 }) # [3]
+  Zap.filter([1, 2, 3], ->(element : Int32, index : Int32) { element > 3 }) # [] of Int32
+  ```
+
   __⚠️ Broken__
 * `flatten(array)` -  Flattens array a single level deep
   
@@ -119,8 +126,8 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 * `map(array, func)` - The map method creates a new array with the results of calling a provided function on every element in the calling array
 
   ```crystal
-   Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 })         # [2, 4, 6]
-   Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 + index }) # [2, 5, 8]
+  Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 })         # [2, 4, 6]
+  Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 + index }) # [2, 5, 8]
   ```
 
 * `nth(array, index = 0)` - Gets the element at index n of array. If n is negative, the nth element from the end is returned

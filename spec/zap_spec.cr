@@ -44,6 +44,11 @@ describe Zap do
     Zap.fill([4, 6, 8, 10], '*', 1, 3).should eq([4, '*', '*', 10])
   end
 
+  it "@filter The filter method creates a new array with all elements that pass the test implemented by the provided function" do
+    Zap.filter([1, 2, 3], ->(element : Int32, index : Int32) { element > 2 }).should eq([3])
+    Zap.filter([1, 2, 3], ->(element : Int32, index : Int32) { element > 3 }).should eq([] of Int32)
+  end
+
   it "@flatten Flattens array a single level deep" do
     # __⚠️ Broken__
     # Zap.flatten([1, 2]).should eq([1, 2])

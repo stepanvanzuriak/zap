@@ -63,6 +63,14 @@ module Zap
     result.fill(start_index, end_index) { |element| value }
   end
 
+  def filter(array, func)
+    result = [] of typeof(array) | typeof(array.first)
+
+    array.map_with_index { |element, index| func.call(element, index) ? result << element : element }
+
+    result
+  end
+
   def findIndex
   end
 
