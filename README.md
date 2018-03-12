@@ -116,6 +116,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.last([1, 2, 3])   # 3
   Zap.last([] of Int32) # Nil
   ```
+* `map(array, func)` - The map method creates a new array with the results of calling a provided function on every element in the calling array
+
+  ```crystal
+   Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 })         # [2, 4, 6]
+   Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 + index }) # [2, 5, 8]
+  ```
 
 * `nth(array, index = 0)` - Gets the element at index n of array. If n is negative, the nth element from the end is returned
 

@@ -83,6 +83,11 @@ describe Zap do
     Zap.last([] of Int32).should eq(Nil)
   end
 
+  it "@map The map method creates a new array with the results of calling a provided function on every element in the calling array" do
+    Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 }).should eq([2, 4, 6])
+    Zap.map([1, 2, 3], ->(element : Int32, index : Int32) { element * 2 + index }).should eq([2, 5, 8])
+  end
+
   it "@nth Gets the element at index n of array. If n is negative, the nth element from the end is returned" do
     Zap.nth(['a', 'b', 'c', 'd'], 1).should eq(
       'b'

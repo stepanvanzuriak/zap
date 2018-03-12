@@ -135,6 +135,10 @@ module Zap
   def last_index_of
   end
 
+  def map(array, func)
+    array.map_with_index { |element, index| func.call(element, index) }
+  end
+
   def nth(array, index = 0)
     array[index]
   end
