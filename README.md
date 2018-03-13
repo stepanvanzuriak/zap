@@ -147,6 +147,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   array # [3, 2, 1]
   ```
 
+* `reduce(array, func)` - Combines all elements in the collection by applying a binary operation, specified by a block, so as to reduce them to a single value
+
+  ```crystal
+  Zap.reduce([1, 2, 3], -> (acc: Int32, element: Int32) {acc + element}) # 6
+  ```
+
 * `sorted_uniq(array)` - Sort array and returns a new array by removing duplicate values in self
   
   ```crystal

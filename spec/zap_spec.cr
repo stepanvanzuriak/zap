@@ -103,6 +103,12 @@ describe Zap do
     )
   end
 
+  it "@reduce Combines all elements in the collection by applying a binary operation, specified by a block, so as to reduce them to a single value" do
+    Zap.reduce([1, 2, 3], ->(acc : Int32, element : Int32) { acc + element }).should eq(
+      6
+    )
+  end
+
   it "@reverse Reverses array so that the first element becomes the last, the second element becomes the second to last, and so on" do
     array = [1, 2, 3]
 

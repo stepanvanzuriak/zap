@@ -169,6 +169,10 @@ module Zap
   def remove
   end
 
+  def reduce(array, func)
+    array.reduce { |acc, i| func.call(acc, i) }
+  end
+
   def reverse(array)
     array.reverse!
   end
@@ -285,9 +289,6 @@ module Zap
   def every
   end
 
-  def filter
-  end
-
   def find
   end
 
@@ -328,9 +329,6 @@ module Zap
   end
 
   def partition
-  end
-
-  def reduce
   end
 
   def reduce_right
