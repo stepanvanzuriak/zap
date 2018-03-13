@@ -103,7 +103,7 @@ describe Zap do
     )
   end
 
-  it "@reduce Combines all elements in the collection by applying a binary operation, specified by a block, so as to reduce them to a single value" do
+  it "@reduce The reduce method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value." do
     Zap.reduce([1, 2, 3], ->(acc : Int32, element : Int32) { acc + element }).should eq(
       6
     )
