@@ -192,6 +192,14 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.without([1, 2, 3], 1, 2) # [3]
   ```
 
+* `zip(*values)` - Creates an array of grouped elements, the first of which contains the first elements of the given arrays, the second of which contains the second elements of the given arrays, and so on
+  
+  ```crystal
+  Zap.zip([1, 2], [11, 22], [111, 222, 333])                # [[1, 11, 111], [2, 22, 222]]
+  Zap.zip([] of Int32)                                      # [] of Int32)
+  Zap.zip(['a', 'b'], [1, 2], [true, false], [true, false]) # [['a', 1, true, true], ['b', 2, false, false]]
+  ```
+
 ## Contributing
 
 1. Fork it ( https://github.com/stepanvanzuriak/zap/fork )
