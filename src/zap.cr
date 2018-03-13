@@ -273,7 +273,13 @@ module Zap
   def xor_with
   end
 
-  def zip
+  def zip(*values)
+    # https://stackoverflow.com/questions/4856717/javascript-equivalent-of-pythons-zip-function
+    values_array = values.to_a
+
+    shortest = values_array.size == 0 ? [] of typeof(values_array) : Zap.reduce(values_array, ->(a : typeof(values_array.first), b : typeof(values_array.first)) { a.size < b.size ? a : b })
+
+    Zap.map(shortest, ->(a : typeof(shortest.first), i : Int32) { Zap.map(values_array, ->(element : typeof(values_array.first), index : Int32) { element[i] }) })
   end
 
   def zip_with
