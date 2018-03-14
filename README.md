@@ -2,7 +2,7 @@
 
 A crystal utility library delivering modularity, performance, & extras.
 
-Inspired by [lodash](https://lodash.com/).
+Zap is a [lodash](https://lodash.com/) inspired library.
 
 __⚠️ Under development - APIs will change. ⚠️__
 
