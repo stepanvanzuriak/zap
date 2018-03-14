@@ -310,7 +310,8 @@ module Zap
   def flat_map_depth
   end
 
-  def for_each
+  def for_each(array, func)
+    array.each_with_index { |value, index| func.call(value, index) }
   end
 
   def for_each_right

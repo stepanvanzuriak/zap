@@ -49,6 +49,13 @@ describe Zap do
     Zap.filter([1, 2, 3], ->(element : Int32, index : Int32) { element > 3 }).should eq([] of Int32)
   end
 
+  it "@for_each" do
+    test = 0
+
+    Zap.for_each([1, 2, 3], ->(element : Int32, index : Int32) { test += 1 })
+    test.should eq(3)
+  end
+
   it "@flatten" do
     # __⚠️ Broken__
     # Zap.flatten([1, 2]).should eq([1, 2])

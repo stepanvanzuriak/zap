@@ -95,6 +95,11 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   ```crystal
   Zap.flattenDeep([1, [2, [3, [4]], 5]]) # [1, 2, 3, 4, 5]
   ```
+* `for_each(array, func)` - Iterates over elements of collection and invokes function for each element
+
+  ```crystal
+  Zap.for_each([1, 2, 3], ->(element: Int32, index: Int32) { puts element }) # Prints 1, 2, 3
+   ```
 
 * `head(array)` - Gets the first element of array
 
