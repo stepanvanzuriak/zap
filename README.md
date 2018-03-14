@@ -1,4 +1,4 @@
-# zap ⚡
+# zap :zap:
 
 A crystal utility library delivering modularity, performance, & extras.
 
