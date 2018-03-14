@@ -142,7 +142,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.nth(['a', 'b', 'c', 'd'], -2) # 'c'
   ```
 
-* `reverse(array)` - The reduce method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value
+* `reverse(array)` - Reverses array so that the first element becomes the last, the second element becomes the second to last, and so on.
 
   ```crystal
   array = [1, 2, 3]
@@ -152,7 +152,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   array # [3, 2, 1]
   ```
 
-* `reduce(array, func)` - Combines all elements in the collection by applying a binary operation, specified by a block, so as to reduce them to a single value
+* `reduce(array, func)` - The reduce method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value
 
   ```crystal
   Zap.reduce([1, 2, 3], -> (acc: Int32, element: Int32) {acc + element}) # 6
