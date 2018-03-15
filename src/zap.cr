@@ -102,6 +102,10 @@ module Zap
     array
   end
 
+  def for_each(array, func)
+    array.each_with_index { |value, index| func.call(value, index) }
+  end
+
   def fromPairs
   end
 
@@ -117,7 +121,13 @@ module Zap
     array[0, end_index]
   end
 
-  def intersection
+  def intersection(*values)
+    values_array = values.to_a
+    result = [] of typeof(values_array) | typeof(values_array.first)
+    result = values_array[0]
+    Zap.for_each(values_array, ->(element : typeof(values_array.first), index : Int32) { result = result & element })
+
+    result
   end
 
   def intersection_by
@@ -308,10 +318,6 @@ module Zap
   end
 
   def flat_map_depth
-  end
-
-  def for_each(array, func)
-    array.each_with_index { |value, index| func.call(value, index) }
   end
 
   def for_each_right

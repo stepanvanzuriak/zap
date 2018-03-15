@@ -108,6 +108,14 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.head([] of Int32) # Nil
   ```
 
+* `intersection(*values)` - Creates an array of unique values that are included in all given arrays
+
+  ```crystal
+  Zap.intersection([1, 2, 3], [1, 2])           # [1, 2]
+  Zap.intersection([1, 2, 3], [1, 2], [1])      # [1]
+  Zap.intersection([1, 2, 3, "a"], [1, 2], [1]) # [1]
+  ```
+
 * `initial(array)` - Gets all but the last element of array
 
   ```crystal

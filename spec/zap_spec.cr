@@ -80,6 +80,12 @@ describe Zap do
     Zap.head([] of Int32).should eq(Nil)
   end
 
+  it "@intersection" do
+    Zap.intersection([1, 2, 3], [1, 2]).should eq([1, 2])
+    Zap.intersection([1, 2, 3], [1, 2], [1]).should eq([1])
+    Zap.intersection([1, 2, 3, "a"], [1, 2], [1]).should eq([1])
+  end
+
   it "@initial" do
     Zap.initial([1, 2, 3]).should eq([1, 2])
     Zap.initial([] of Int32).should eq([] of Int32)
