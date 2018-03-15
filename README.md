@@ -4,7 +4,7 @@ A crystal utility library delivering modularity, performance, & extras.
 
 Zap is a [lodash](https://lodash.com/) inspired library.
 
-__⚠️ Under development - APIs will change. ⚠️__
+__:warning: Under development - APIs will change. :warning:__
 
 ## Installation
 
@@ -34,7 +34,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   ```
 
-  __⚠️ Broken__
+  __:warning: Broken__
 * `compact(array)` - Creates an array with all falsey values removed
   
   ```crystal
@@ -81,7 +81,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.filter([1, 2, 3], ->(element : Int32, index : Int32) { element > 3 }) # [] of Int32
   ```
 
-  __⚠️ Broken__
+  __:warning: Broken__
 * `flatten(array)` -  Flattens array a single level deep
   
   ```crystal
@@ -178,7 +178,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.sample([1])    # 1
   ```
 
-  __⚠️ Broken__
+  __:warning: Broken__
 * `union(*values)` - Creates an array of unique values
 
   ```crystal
@@ -207,7 +207,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 
 ## Contributing
 
-1. Fork it ( https://github.com/stepanvanzuriak/zap/fork )
+1. Fork it (https://github.com/stepanvanzuriak/zap/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
