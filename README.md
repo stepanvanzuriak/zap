@@ -1,7 +1,5 @@
 # zap :zap:
 
-A crystal utility library delivering modularity, performance, & extras.
-
 Zap is a [lodash](https://lodash.com/) inspired library.
 
 __:warning: Under development - APIs will change. :warning:__
