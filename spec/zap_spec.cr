@@ -56,6 +56,10 @@ describe Zap do
     test.should eq(3)
   end
 
+  it "@from_pairs" do
+    # Zap.from_pairs([['a', 1], ['b', 2]]).should eq({"a" => 1, "b" => 2})
+  end
+
   it "@flatten" do
     # __⚠️ Broken__
     # Zap.flatten([1, 2]).should eq([1, 2])
@@ -65,14 +69,20 @@ describe Zap do
     # Zap.flatten([[1, [[2, 3]]]]).should eq([1, [[2, 3]]])
   end
 
-  it "@flattenDeep" do
-    Zap.flattenDeep([1, [2, [3, [4]], 5]]).should eq([1, 2, 3, 4, 5])
+  it "@flatten_type" do
+    Zap.flatten_type(1).is_a?(Int32).should eq(true)
+    Zap.flatten_type([1, [2]]).is_a?(Int32).should eq(true)
+    Zap.flatten_type([1, [2, ['a', 'b']]]).is_a?(Int32 | Char).should eq(true)
   end
 
-  it "@flattenDepth" do
+  it "@flatten_deep" do
+    Zap.flatten_deep([1, [2, [3, [4]], 5]]).should eq([1, 2, 3, 4, 5])
+  end
+
+  it "@flatten_depth" do
     # __⚠️ Broken__
-    # Zap.flattenDepth([1, [2, [3, [4]], 5]], 1).should eq([1, 2, [3, [4]], 5])
-    # Zap.flattenDepth([1, [2, [3, [4]], 5]], 2).should eq([1, 2, 3, [4], 5])
+    # Zap.flatten_depth([1, [2, [3, [4]], 5]], 1).should eq([1, 2, [3, [4]], 5])
+    # Zap.flatten_depth([1, [2, [3, [4]], 5]], 2).should eq([1, 2, 3, [4], 5])
   end
 
   it "@head" do

@@ -90,11 +90,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.flatten([1, [[2, 3]]]) # [1, [2, 3]])
   ```
 
-* `flattenDeep(array)` - Recursively flattens array
+* `flatten_deep(array)` - Recursively flattens array
 
   ```crystal
-  Zap.flattenDeep([1, [2, [3, [4]], 5]]) # [1, 2, 3, 4, 5]
+  Zap.flatten_deep([1, [2, [3, [4]], 5]]) # [1, 2, 3, 4, 5]
   ```
+
 * `for_each(array, func)` - Iterates over elements of collection and invokes function for each element
 
   ```crystal
@@ -211,6 +212,16 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.zip([1, 2], [11, 22], [111, 222, 333])                # [[1, 11, 111], [2, 22, 222]]
   Zap.zip([] of Int32)                                      # [] of Int32)
   Zap.zip(['a', 'b'], [1, 2], [true, false], [true, false]) # [['a', 1, true, true], ['b', 2, false, false]]
+  ```
+
+### Util
+
+* `flatten_type(object)` -  Recursively flattens types
+
+  ```crystal
+  Zap.flatten_type(1)                    # Int32
+  Zap.flatten_type([1, [2]])             # Int32
+  Zap.flatten_type([1, [2, ['a', 'b']]]) # Int32 | Char
   ```
 
 ## Contributing

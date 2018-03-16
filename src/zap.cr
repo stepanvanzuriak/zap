@@ -92,11 +92,11 @@ module Zap
     result
   end
 
-  def flattenDeep(array)
+  def flatten_deep(array)
     array.flatten
   end
 
-  def flattenDepth(array, depth = 1)
+  def flatten_depth(array, depth = 1)
     0.upto(depth) { |i| array = Zap.flatten(array) }
 
     array
@@ -106,7 +106,19 @@ module Zap
     array.each_with_index { |value, index| func.call(value, index) }
   end
 
-  def fromPairs
+  def from_pairs(array)
+    result_first = [] of typeof(array)
+    result_second = [] of typeof(array)
+
+    # Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_first = ([] of typeof(element) | typeof(element.first)) + result_first })
+    # Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_second = ([] of typeof(element) | typeof(element.first)) + result_second })
+
+    p typeof(result_first)
+    p typeof(result_second)
+
+    # Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { index == 0 ? (result_first << element[index]) : (index == 1 ? result_second << element[index] : Nil) })
+
+    Hash.zip(result_first, result_second)
   end
 
   def head(array)
@@ -351,5 +363,15 @@ module Zap
   end
 
   # Enumerable
+
+  # Util
+  def flatten_type(object)
+    if object.is_a?(Array)
+      flatten_type(object[0])
+    else
+      object
+    end
+  end
+  # Util
 
 end
