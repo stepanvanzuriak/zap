@@ -19,12 +19,48 @@ dependencies:
 ```crystal
 require "zap"
 
+array = [] of Zap.flatten_type([1, [2, ['a', 'b']]]) # [] of Int32 | Char
 Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
+
 ```
 
-## Methods list
 
-### Array
+
+# Methods
+
+- [Array](#array)
+  - `chunk`
+  - `compact`
+  - `concat`
+  - `difference`
+  - `drop`
+  - `drop_right`
+  - `fill`
+  - `filter`
+  - `flatten`
+  - `flatten_deep`
+  - `for_each`
+  - `head`
+  - `intersection`
+  - `initial`
+  - `join`
+  - `last`
+  - `map`
+  - `nth`
+  - `reverse`
+  - `reduce`
+  - `sorted_uniq`
+  - `tail`
+  - `sample`
+  - `union`
+  - `without`
+  - `zip`
+
+- [Util](#util)
+  - `flatten_type`
+
+
+## Array
 
 * `chunk(array, size)` - Creates an array of elements split into groups the length of size
   
@@ -212,7 +248,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.zip(['a', 'b'], [1, 2], [true, false], [true, false]) # [['a', 1, true, true], ['b', 2, false, false]]
   ```
 
-### Util
+## Util
 
 * `flatten_type(object)` -  Recursively flattens types
 
