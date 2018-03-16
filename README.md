@@ -40,6 +40,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   - `flatten`
   - `flatten_deep`
   - `for_each`
+  - `from_pairs`
   - `head`
   - `intersection`
   - `initial`
@@ -135,6 +136,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   ```crystal
   Zap.for_each([1, 2, 3], ->(element: Int32, index: Int32) { puts element }) # Prints 1, 2, 3
    ```
+
+* `from_pairs(pairs)` - Compres arrays of pairs to Hash
+
+  ```crystal
+  Zap.from_pairs([['a', 1], ['b', 2]]) # {'a' => 1, 'b' => 2}
+  ```
 
 * `head(array)` - Gets the first element of array
 

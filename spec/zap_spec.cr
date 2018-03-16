@@ -57,7 +57,7 @@ describe Zap do
   end
 
   it "@from_pairs" do
-    # Zap.from_pairs([['a', 1], ['b', 2]]).should eq({"a" => 1, "b" => 2})
+    Zap.from_pairs([['a', 1], ['b', 2]]).should eq({'a' => 1, 'b' => 2})
   end
 
   it "@flatten" do

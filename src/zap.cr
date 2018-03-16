@@ -107,16 +107,14 @@ module Zap
   end
 
   def from_pairs(array)
-    result_first = [] of typeof(array)
-    result_second = [] of typeof(array)
+    result_first = [] of typeof(Zap.flatten_type(array))
+    result_second = [] of typeof(Zap.flatten_type(array))
 
-    # Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_first = ([] of typeof(element) | typeof(element.first)) + result_first })
-    # Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_second = ([] of typeof(element) | typeof(element.first)) + result_second })
+    Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_first << element[0] })
+    Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_second << element[1] })
 
-    p typeof(result_first)
-    p typeof(result_second)
-
-    # Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { index == 0 ? (result_first << element[index]) : (index == 1 ? result_second << element[index] : Nil) })
+    p result_first
+    p result_second
 
     Hash.zip(result_first, result_second)
   end
