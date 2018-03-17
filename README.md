@@ -48,6 +48,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   - `last`
   - `map`
   - `nth`
+  - `pull`
   - `reverse`
   - `reduce`
   - `sorted_uniq`
@@ -190,6 +191,12 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   ```crystal
   Zap.nth(['a', 'b', 'c', 'd'], 1)  # 'b'
   Zap.nth(['a', 'b', 'c', 'd'], -2) # 'c'
+  ```
+
+* `pull(array, *value)` - Removes all given values from array
+
+  ```crystal
+  Zap.pull([['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c')   # ['b', 'b']
   ```
 
 * `reverse(array)` - Reverses array so that the first element becomes the last, the second element becomes the second to last, and so on.

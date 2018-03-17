@@ -113,9 +113,6 @@ module Zap
     Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_first << element[0] })
     Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { result_second << element[1] })
 
-    p result_first
-    p result_second
-
     Hash.zip(result_first, result_second)
   end
 
@@ -171,7 +168,8 @@ module Zap
     array[index]
   end
 
-  def pull
+  def pull(array, *value)
+    array - value.to_a
   end
 
   def pull_all

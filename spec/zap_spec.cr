@@ -126,6 +126,10 @@ describe Zap do
     )
   end
 
+  it "@pull" do
+    Zap.pull(['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c').should eq(['b', 'b'])
+  end
+
   it "@reduce" do
     Zap.reduce([1, 2, 3], ->(acc : Int32, element : Int32) { acc + element }).should eq(
       6
