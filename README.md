@@ -215,7 +215,7 @@ Gets the index at which the first occurrence of value is found in array
   ```crystal
   Zap.index_of([1, 2, 1, 2], 2)    # 1
   Zap.index_of([3], 2)             # -1
-  Zap.index_of([1, 2, 1, 2], 2, 2) # 3)
+  Zap.index_of([1, 2, 1, 2], 2, 2) # 3
   Zap.index_of([1, 2, 2, 2], 2, 2) # 2
   ```
 
