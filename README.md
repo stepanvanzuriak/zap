@@ -391,7 +391,7 @@ Creates an array of unique values that is the [symmetric difference](https://en.
 
   ```crystal
   Zap.xor([2, 1], [2, 3]) # [1, 3]
-  Zap.xor([2, 1], [2, 3], [1] # [3]
+  Zap.xor([2, 1], [2, 3], [1]) # [3]
   ```
 
 ### zip
