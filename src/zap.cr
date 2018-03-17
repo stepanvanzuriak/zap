@@ -276,13 +276,21 @@ module Zap
   def unzip_with
   end
 
-  def without(array, *value)
-    array_values = value.to_a
+  def without(array, *values)
+    array_values = values.to_a
 
     array - array_values
   end
 
-  def xor
+  def xor(*values)
+    values_array = values.to_a
+    flat_vales = Zap.flatten_deep(values_array)
+
+    xor_array = [] of typeof(Zap.flatten_type(values_array))
+
+    Zap.for_each(flat_vales, ->(element : typeof(Zap.flatten_type(values_array)), index : Int32) { flat_vales.count(element) == 1 ? xor_array << element : Nil })
+
+    xor_array
   end
 
   def xor_by

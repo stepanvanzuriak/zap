@@ -69,12 +69,6 @@ describe Zap do
     # Zap.flatten([[1, [[2, 3]]]]).should eq([1, [[2, 3]]])
   end
 
-  it "@flatten_type" do
-    Zap.flatten_type(1).is_a?(Int32).should eq(true)
-    Zap.flatten_type([1, [2]]).is_a?(Int32).should eq(true)
-    Zap.flatten_type([1, [2, ['a', 'b']]]).is_a?(Int32 | Char).should eq(true)
-  end
-
   it "@flatten_deep" do
     Zap.flatten_deep([1, [2, [3, [4]], 5]]).should eq([1, 2, 3, 4, 5])
   end
@@ -178,6 +172,11 @@ describe Zap do
     Zap.without([2, 1, 2, 3], 1, 2).should eq([3])
   end
 
+  it "@xor" do
+    Zap.xor([2, 1], [2, 3]).should eq([1, 3])
+    Zap.xor([2, 1], [2, 3], [1]).should eq([3])
+  end
+
   it "@zip" do
     Zap.zip([1, 2], [11, 22], [111, 222, 333]).should eq([[1, 11, 111], [2, 22, 222]])
     Zap.zip([] of Int32).should eq([] of Int32)
@@ -192,5 +191,13 @@ describe Zap do
 
   # Enumerable
   # Enumerable
+
+  # Util
+  it "@flatten_type" do
+    Zap.flatten_type(1).is_a?(Int32).should eq(true)
+    Zap.flatten_type([1, [2]]).is_a?(Int32).should eq(true)
+    Zap.flatten_type([1, [2, ['a', 'b']]]).is_a?(Int32 | Char).should eq(true)
+  end
+  # Util
 
 end

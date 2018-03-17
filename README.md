@@ -56,6 +56,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   - `sample`
   - `union`
   - `without`
+  - `xor`
   - `zip`
 
 - [Util](#util)
@@ -193,7 +194,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   Zap.nth(['a', 'b', 'c', 'd'], -2) # 'c'
   ```
 
-* `pull(array, *value)` - Removes all given values from array
+* `pull(array, *values)` - Removes all given values from array
 
   ```crystal
   Zap.pull([['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c')   # ['b', 'b']
@@ -252,6 +253,13 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 
   ```crystal
   Zap.without([1, 2, 3], 1, 2) # [3]
+  ```
+
+* `xor(*values)` - Creates an array of unique values that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference) of the given arrays
+
+  ```crystal
+  Zap.xor([2, 1], [2, 3]) # [1, 3]
+  Zap.xor([2, 1], [2, 3], [1] # [3]
   ```
 
 * `zip(*values)` - Creates an array of grouped elements, the first of which contains the first elements of the given arrays, the second of which contains the second elements of the given arrays, and so on
