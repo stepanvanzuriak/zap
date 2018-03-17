@@ -84,6 +84,13 @@ describe Zap do
     Zap.head([] of Int32).should eq(Nil)
   end
 
+  it "@index_of" do
+    Zap.index_of([1, 2, 1, 2], 2).should eq(1)
+    Zap.index_of([3], 2).should eq(-1)
+    Zap.index_of([1, 2, 1, 2], 2, 2).should eq(3)
+    Zap.index_of([1, 2, 2, 2], 2, 2).should eq(2)
+  end
+
   it "@intersection" do
     Zap.intersection([1, 2, 3], [1, 2]).should eq([1, 2])
     Zap.intersection([1, 2, 3], [1, 2], [1]).should eq([1])
@@ -156,7 +163,6 @@ describe Zap do
   end
 
   it "@union" do
-    # __⚠️ Broken__
     Zap.union([2], [1, 2]).should eq([2, 1])
     Zap.union([2], [1, 2], ["a"]).should eq([2, 1, "a"])
   end

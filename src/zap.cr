@@ -34,11 +34,8 @@ module Zap
     array - values
   end
 
-  def difference_by
-  end
-
-  def difference_with
-  end
+  # difference_by ?
+  # difference_with ?
 
   def drop(array, number = 1)
     start_index = number > array.size ? array.size : number
@@ -50,11 +47,8 @@ module Zap
     array[0, end_index]
   end
 
-  def drop_right_while
-  end
-
-  def drop_while
-  end
+  # drop_right_while ?
+  # drop_while ?
 
   def fill(array, value, start_index = 0, end_index = array.size + 1)
     result = [] of typeof(value) + array
@@ -71,11 +65,9 @@ module Zap
     result
   end
 
-  def findIndex
-  end
+  # find_index ?
 
-  def findLastIndex
-  end
+  # find_last_index ?
 
   def flatten(array)
     result = [] of typeof(array) | typeof(array.first)
@@ -120,7 +112,12 @@ module Zap
     array.size > 0 ? array[0] : Nil
   end
 
-  def index_of
+  def index_of(array, value, start_index = 0)
+    result = [] of Int32
+
+    Zap.for_each(array, ->(element : typeof(array.first), index : Int32) { index >= start_index ? (value == element ? result << index : Nil) : Nil })
+
+    Zap.head(result) != Nil ? Zap.head(result) : -1
   end
 
   def initial(array)

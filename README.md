@@ -42,6 +42,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   - [`for_each`](#for_each)
   - [`from_pairs`](#from_pairs)
   - [`head`](#head)
+  - [`index_of`](#index_of)
   - [`intersection`](#intersection)
   - [`initial`](#initial)
   - [`join`](#join)
@@ -205,6 +206,19 @@ Gets the first element of array
   Zap.head([] of Int32) # Nil
   ```
 
+### index_of
+
+`index_of(array, value, start_index = 0)`
+
+Gets the index at which the first occurrence of value is found in array
+
+  ```crystal
+  Zap.index_of([1, 2, 1, 2], 2)    # 1
+  Zap.index_of([3], 2)             # -1
+  Zap.index_of([1, 2, 1, 2], 2, 2) # 3)
+  Zap.index_of([1, 2, 2, 2], 2, 2) # 2
+  ```
+
 ### intersection
 
 `intersection(*values)`
@@ -345,7 +359,8 @@ Gets a random element from array
 Creates an array of unique values
 
   ```crystal
-  Zap.union([2], [1, 2]) # [2, 1]
+  Zap.union([2], [1, 2])        # [2, 1]
+  Zap.union([2], [1, 2], ["a"]) # [2, 1, "a"]
   ```
 
 ### uniq
