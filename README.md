@@ -1,4 +1,4 @@
-# zap :zap:
+# :zap: zap 
 
 Zap is a [lodash](https://lodash.com/) inspired library.
 
