@@ -157,9 +157,8 @@ describe Zap do
 
   it "@union" do
     # __⚠️ Broken__
-    # Zap.union([2], [1, 2]).should eq(
-    #  [2, 1]
-    # )
+    Zap.union([2], [1, 2]).should eq([2, 1])
+    Zap.union([2], [1, 2], ["a"]).should eq([2, 1, "a"])
   end
 
   it "@uniq" do

@@ -245,13 +245,12 @@ module Zap
 
   def union(*value)
     array_values = value.to_a
-    result = [] of typeof(array_values.first) | typeof(array_values)
 
-    array_values.each do |item|
-      result = result | item
-    end
+    result = [] of typeof(Zap.flatten_type(array_values))
 
-    result
+    Zap.for_each(array_values, ->(element : typeof(array_values.first), index : Int32) { result.concat(element) })
+
+    Zap.uniq(result)
   end
 
   def union_by

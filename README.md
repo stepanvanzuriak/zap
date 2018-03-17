@@ -340,8 +340,6 @@ Gets a random element from array
 
 ### union
 
-__:warning: Broken__
-
 `union(*values)`
 
 Creates an array of unique values
