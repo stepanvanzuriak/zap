@@ -6,7 +6,7 @@ __:warning: Under development - APIs will change. :warning:__
 
 ## Installation
 
-Add this to your application's `shard.yml`:
+Add this to your application's `shard.yml` and run `shards install` (or `crystal deps install`):
 
 ```yaml
 dependencies:
