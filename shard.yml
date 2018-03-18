@@ -4,6 +4,4 @@ version: 0.1.0
 authors:
   - stepanvanzuriak <stepanvanzuriak@gmail.com>
 
-crystal: 0.24.1
-
 license: MIT
