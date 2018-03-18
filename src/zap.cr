@@ -186,6 +186,10 @@ module Zap
     array.sample
   end
 
+  def shuffle(array)
+    array.sort { Random.rand <=> 0.5 }
+  end
+
   # slice ?
   # sorted_index ?
   # sorted_index_by ?
@@ -205,12 +209,13 @@ module Zap
   end
 
   def take(array, start_index = 1)
-    return start_index - 1 >= 0 ? array[0..(start_index - 1)] : [] of typeof(array.first)
+    start_index = start_index - 1
+    return start_index >= 0 ? array[0..start_index] : [] of typeof(array.first)
   end
 
-  # take_right
-  # take_right_while
-  # take_while
+  # take_right ?
+  # take_right_while ?
+  # take_while ?
 
   def union(*value)
     array_values = value.to_a

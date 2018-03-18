@@ -199,6 +199,10 @@ describe Zap do
     Zap.sample([2]).should eq(2)
   end
 
+  it "@shuffle" do
+    Zap.shuffle([2]).should eq([2])
+  end
+
   # Array
 
   # Enumerable

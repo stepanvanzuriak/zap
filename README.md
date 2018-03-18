@@ -50,10 +50,11 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   - [`pull`](#nth)
   - [`reverse`](#reverse)
   - [`reduce`](#reduce)
-  - [`sorted_uniq`](#sorted_uniq)
   - [`tail`](#tail)
   - [`take`](#take)
   - [`sample`](#sample)
+  - [`shuffle`](#shuffle)
+  - [`sorted_uniq`](#sorted_uniq)
   - [`union`](#union)
   - [`without`](#without)
   - [`xor`](#xor)
@@ -362,6 +363,17 @@ Gets a random element from array
   ```crystal
   Zap.sample([1, 2]) # 1 or 2
   Zap.sample([1])    # 1
+  ```
+
+### shuffle
+
+`shuffle(array)`
+
+Creates an array of shuffled values
+
+  ```crystal
+  Zap.shuffle([2]) # [2]
+  Zap.shuffle([1, 2]) # [1, 2] or [2, 1]
   ```
 
 ### union
