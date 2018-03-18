@@ -162,6 +162,13 @@ describe Zap do
     )
   end
 
+  it "@take" do
+    Zap.take([1, 2, 3]).should eq([1])
+    Zap.take([1, 2, 3], 2).should eq([1, 2])
+    Zap.take([1, 2, 3], 5).should eq([1, 2, 3])
+    Zap.take([1, 2, 3], 0).should eq([] of Int32)
+  end
+
   it "@union" do
     Zap.union([2], [1, 2]).should eq([2, 1])
     Zap.union([2], [1, 2], ["a"]).should eq([2, 1, "a"])

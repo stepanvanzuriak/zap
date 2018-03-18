@@ -66,7 +66,6 @@ module Zap
   end
 
   # find_index ?
-
   # find_last_index ?
 
   def flatten(array)
@@ -169,20 +168,11 @@ module Zap
     array - value.to_a
   end
 
-  def pull_all
-  end
-
-  def pull_all_by
-  end
-
-  def pull_all_with
-  end
-
-  def pull_at
-  end
-
-  def remove
-  end
+  # pull_all ?
+  # pull_all_by ?
+  # pull_all_with ?
+  # pull_at ?
+  # remove ?
 
   def reduce(array, func)
     array.reduce { |acc, i| func.call(acc, i) }
@@ -196,49 +186,31 @@ module Zap
     array.sample
   end
 
-  def slice
-  end
-
-  def sorted_index
-  end
-
-  def sorted_index_by
-  end
-
-  def sorted_index_of
-  end
-
-  def sorted_last_index
-  end
-
-  def sorted_last_index_by
-  end
-
-  def sorted_last_index_of
-  end
+  # slice ?
+  # sorted_index ?
+  # sorted_index_by ?
+  # sorted_index_of ?
+  # sorted_last_index ?
+  # sorted_last_index_by ?
+  # sorted_last_index_of ?
 
   def sorted_uniq(array)
     array.sort.uniq
   end
 
-  def sorted_uniq_by
-  end
+  # sorted_uniq_by ?
 
   def tail(array)
     array.size > 0 ? array[1, array.size - 1] : Nil
   end
 
-  def take
+  def take(array, start_index = 1)
+    return start_index - 1 >= 0 ? array[0..(start_index - 1)] : [] of typeof(array.first)
   end
 
-  def take_right
-  end
-
-  def take_right_while
-  end
-
-  def take_while
-  end
+  # take_right
+  # take_right_while
+  # take_while
 
   def union(*value)
     array_values = value.to_a
@@ -250,27 +222,18 @@ module Zap
     Zap.uniq(result)
   end
 
-  def union_by
-  end
-
-  def union_with
-  end
+  # union_by ?
+  # union_with ?
 
   def uniq(array)
     array.uniq
   end
 
-  def uniq_by
-  end
+  # uniq_by ?
+  # uniq_with ?
 
-  def uniq_with
-  end
-
-  def unzip
-  end
-
-  def unzip_with
-  end
+  # unzip
+  # unzip_with ?
 
   def without(array, *values)
     array_values = values.to_a
@@ -289,11 +252,8 @@ module Zap
     xor_array
   end
 
-  def xor_by
-  end
-
-  def xor_with
-  end
+  # xor_by ?
+  # xor_with ?
 
   def zip(*values)
     # https://stackoverflow.com/questions/4856717/javascript-equivalent-of-pythons-zip-function
@@ -304,8 +264,7 @@ module Zap
     Zap.map(shortest, ->(a : typeof(shortest.first), i : Int32) { Zap.map(values_array, ->(element : typeof(values_array.first), index : Int32) { element[i] }) })
   end
 
-  def zip_with
-  end
+  # zip_with ?
 
   # Array
 

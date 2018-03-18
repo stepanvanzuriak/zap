@@ -24,8 +24,6 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
 
 ```
 
-
-
 # Methods
 
 - [Array](#array)
@@ -54,6 +52,7 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   - [`reduce`](#reduce)
   - [`sorted_uniq`](#sorted_uniq)
   - [`tail`](#tail)
+  - [`take`](#take)
   - [`sample`](#sample)
   - [`union`](#union)
   - [`without`](#without)
@@ -339,6 +338,19 @@ Gets all but the first element of array
   ```crystal
   Zap.tail([1, 2, 3])   # [2, 3]
   Zap.tail([] of Int32) # Nil 
+  ```
+
+### take
+
+`take(array, start_index = 1)`
+
+Creates a slice of array with n elements taken from the beginning
+
+  ```crystal
+  Zap.take([1, 2, 3])    # [1]
+  Zap.take([1, 2, 3], 2) # [1, 2]
+  Zap.take([1, 2, 3], 5) # [1, 2, 3])
+  Zap.take([1, 2, 3], 0) # [] of Int32
   ```
 
 ### sample
