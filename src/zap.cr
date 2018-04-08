@@ -30,10 +30,6 @@ module Zap
     Zap.flatten(array_values)
   end
 
-  def difference(array, values)
-    array - values
-  end
-
   # difference_by ?
   # difference_with ?
 
@@ -81,10 +77,6 @@ module Zap
     end
 
     result
-  end
-
-  def flatten_deep(array)
-    array.flatten
   end
 
   def flatten_depth(array, depth = 1)
@@ -230,9 +222,7 @@ module Zap
   # union_by ?
   # union_with ?
 
-  def uniq(array)
-    array.uniq
-  end
+
 
   # uniq_by ?
   # uniq_with ?

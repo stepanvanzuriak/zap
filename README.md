@@ -30,13 +30,11 @@ Zap.chunk(['a', 'b', 'c', 4], 2) # [['a', 'b'], ['c', 4]]
   - [`chunk`](#chunk)
   - [`compact`](#compact)
   - [`concat`](#concat)
-  - [`difference`](#difference)
   - [`drop`](#drop)
   - [`drop_right`](#drop_right)
   - [`fill`](#fill)
   - [`filter`](#filter)
   - [`flatten`](#flatten)
-  - [`flatten_deep`](#flatten_deep)
   - [`for_each`](#for_each)
   - [`from_pairs`](#from_pairs)
   - [`head`](#head)
@@ -97,16 +95,6 @@ Creates a new array concatenating array with any additional arrays and/or values
   Zap.concat([1, 2], 2, [3], [[4]], [[[4]]]) # [1, 2, 2, 3, [4], [[4]]]
   ```
 
-### difference
-
-`difference(array, values)` 
-
-Creates an array of array values not included in the other
-  
-  ```crystal
-  Zap.difference([2, 1, 5, 10], [2]) # [1, 5, 10]
-  ```
-
 ### drop
 
 `drop(array, number = 1)`
@@ -163,16 +151,6 @@ Flattens array a single level deep
   Zap.flatten([1, [2]])      # [1, 2]
   Zap.flatten([1, [2, 3]])   # [1, 2, 3])
   Zap.flatten([1, [[2, 3]]]) # [1, [2, 3]])
-  ```
-
-### flatten_deep
-
-`flatten_deep(array)`
-
-Recursively flattens array
-
-  ```crystal
-  Zap.flatten_deep([1, [2, [3, [4]], 5]]) # [1, 2, 3, 4, 5]
   ```
 
 ### for_each
