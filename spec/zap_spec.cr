@@ -56,10 +56,6 @@ describe Zap do
     Zap.from_pairs([['a', 1], ['b', 2]]).should eq({'a' => 1, 'b' => 2})
   end
 
-  it "@flatten_deep" do
-    Zap.flatten_deep([1, [2, [3, [4]], 5]]).should eq([1, 2, 3, 4, 5])
-  end
-
   it "@flatten_depth" do
     # __⚠️ Broken__
     # Zap.flatten_depth([1, [2, [3, [4]], 5]], 1).should eq([1, 2, [3, [4]], 5])

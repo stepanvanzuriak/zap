@@ -216,7 +216,7 @@ module Zap
 
     Zap.for_each(array_values, ->(element : typeof(array_values.first), index : Int32) { result.concat(element) })
 
-    Zap.uniq(result)
+    result.uniq
   end
 
   # union_by ?
@@ -238,7 +238,7 @@ module Zap
 
   def xor(*values)
     values_array = values.to_a
-    flat_vales = Zap.flatten_deep(values_array)
+    flat_vales = values_array.flatten
 
     xor_array = [] of typeof(Zap.flatten_type(values_array))
 
