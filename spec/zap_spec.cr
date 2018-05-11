@@ -174,12 +174,6 @@ describe Zap do
     Zap.union([2], [1, 2], ["a"]).should eq([2, 1, "a"])
   end
 
-  it "@uniq" do
-    Zap.uniq([1, 2, 2]).should eq(
-      [1, 2]
-    )
-  end
-
   it "@without" do
     Zap.without([2, 1, 2, 3], 1, 2).should eq([3])
   end

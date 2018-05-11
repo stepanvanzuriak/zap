@@ -387,16 +387,6 @@ Creates an array of unique values
   Zap.union([2], [1, 2], ["a"]) # [2, 1, "a"]
   ```
 
-### uniq
-
-`uniq(array)`
-
-Returns a new array by removing duplicate values in self
-
-  ```crystal
-  Zap.uniq([1, 2, 2]) # [1, 2]
-  ```
-
 ### without
 
 `without(array, *values)`

@@ -224,15 +224,11 @@ module Zap
 
     Zap.for_each(array_values, ->(element : typeof(array_values.first), index : Int32) { result.concat(element) })
 
-    Zap.uniq(result)
+    result.uniq
   end
 
   # union_by ?
   # union_with ?
-
-  def uniq(array)
-    array.uniq
-  end
 
   # uniq_by ?
   # uniq_with ?
