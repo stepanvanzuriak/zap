@@ -30,10 +30,6 @@ module Zap
     Zap.flatten(array_values)
   end
 
-  def difference(array, values)
-    array - values
-  end
-
   # difference_by ?
   # difference_with ?
 
@@ -81,10 +77,6 @@ module Zap
     end
 
     result
-  end
-
-  def flatten_deep(array)
-    array.flatten
   end
 
   def flatten_depth(array, depth = 1)
@@ -244,7 +236,7 @@ module Zap
 
   def xor(*values)
     values_array = values.to_a
-    flat_vales = Zap.flatten_deep(values_array)
+    flat_vales = values_array.flatten
 
     xor_array = [] of typeof(Zap.flatten_type(values_array))
 

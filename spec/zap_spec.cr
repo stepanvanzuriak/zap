@@ -21,10 +21,6 @@ describe Zap do
     # Zap.concat([1, 2], 2, [3, 10], [[4]], [[[4]]]).should eq([1, 2, 2, 3, 10, [4], [[4]]])
   end
 
-  it "@difference" do
-    Zap.difference([2, 1, 5, 10], [2]).should eq([1, 5, 10])
-  end
-
   it "@drop" do
     Zap.drop([1, 2, 3]).should eq([2, 3])
     Zap.drop([1, 2, 3], 2).should eq([3])
@@ -58,19 +54,6 @@ describe Zap do
 
   it "@from_pairs" do
     Zap.from_pairs([['a', 1], ['b', 2]]).should eq({'a' => 1, 'b' => 2})
-  end
-
-  it "@flatten" do
-    # __⚠️ Broken__
-    # Zap.flatten([1, 2]).should eq([1, 2])
-    # Zap.flatten([1, [2]]).should eq([1, 2])
-    # Zap.flatten([1, [2, 3]]).should eq([1, 2, 3])
-    # Zap.flatten([1, [[2, 3]]]).should eq([1, [2, 3]])
-    # Zap.flatten([[1, [[2, 3]]]]).should eq([1, [[2, 3]]])
-  end
-
-  it "@flatten_deep" do
-    Zap.flatten_deep([1, [2, [3, [4]], 5]]).should eq([1, 2, 3, 4, 5])
   end
 
   it "@flatten_depth" do
